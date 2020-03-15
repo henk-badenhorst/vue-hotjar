@@ -6,7 +6,7 @@
   <br>
   <br>
   <span>
-    <img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg">
+    <img src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg">
   </span>
   &nbsp;
   <span>
