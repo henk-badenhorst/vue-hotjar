@@ -1,0 +1,25 @@
+{
+  "name": "vue-hotjar",
+  "version": "0.1.0",
+  "description": "Vue Hotjar plugin",
+  "main": "lib/index.js",
+  "bugs": "https://github.com/henk-badenhorst/vue-hotjar/issues",
+  "homepage": "https://github.com/henk-badenhorst/vue-hotjar.git#readme",
+  "repository": "https://github.com/henk-badenhorst/vue-hotjar.git",
+  "directories": {
+    "lib": "lib"
+  },
+  "keywords": [
+    "vue",
+    "plugin",
+    "hotjar",
+    "analytics"
+  ],
+  "author": {
+    "name": "Henk Badenhorst",
+    "email": "hello@henk.io",
+    "url": "https://henk.io"
+  },
+  "license": "ISC"
+}
+
