@@ -2,13 +2,10 @@
   "name": "vue-hotjar",
   "version": "0.1.1",
   "description": "Vue Hotjar plugin",
-  "main": "lib/index.js",
+  "main": "src/index.js",
   "bugs": "https://github.com/henk-badenhorst/vue-hotjar/issues",
   "homepage": "https://github.com/henk-badenhorst/vue-hotjar.git#readme",
   "repository": "https://github.com/henk-badenhorst/vue-hotjar.git",
-  "directories": {
-    "lib": "lib"
-  },
   "keywords": [
     "vue",
     "plugin",
