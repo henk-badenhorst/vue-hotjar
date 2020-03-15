@@ -1,6 +1,6 @@
 {
   "name": "vue-hotjar",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Vue Hotjar plugin",
   "main": "lib/index.js",
   "bugs": "https://github.com/henk-badenhorst/vue-hotjar/issues",
