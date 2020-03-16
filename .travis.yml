@@ -9,7 +9,9 @@ node_js:
 before_script:
   - npm prune
 script:
+  - npm install
   - npm run lint
+  - npm run build
   - npm run test
 after_success:
   - npm run semantic-release
