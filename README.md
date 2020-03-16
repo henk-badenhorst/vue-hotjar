@@ -6,6 +6,10 @@
   <br>
   <br>
   <span>
+    <img src="https://travis-ci.org/henk-badenhorst/vue-hotjar.svg?branch=master">
+  </span>
+  &nbsp;
+  <span>
     <img src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg">
   </span>
   &nbsp;
@@ -14,11 +18,9 @@
   </span>
 </p>
 
-
-# vue-hotjar
+# Vue Hotjar
 
 This is a simple Vue plugin that will allow you to easily add Hotjar to any Vue project.
-
 
 # Why should I use it
 
