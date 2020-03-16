@@ -9,7 +9,7 @@ export default {
     if (isProduction) {
       return new Hotjar(id, snippetVersion)
     } else {
-      console.log('HotJar Disabled')
+      console.warn('HotJar Disabled')
     }
   }
 }
