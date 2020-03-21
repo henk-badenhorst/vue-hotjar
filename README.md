@@ -24,7 +24,7 @@ This is a simple Vue plugin that will allow you to easily add Hotjar to any Vue 
 
 # Why should I use it
 
-If you just add the Hotjar snippet to your site it will start tracking user activity regardless of the enviroment Eg. in development mode. This is undesirable and this extension will take care of that. It will also help you to easilty manage the your hotjar ID's in staging and development enviroments.
+If you just add the Hotjar snippet to your site it will start tracking user activity regardless of the environment Eg. in development mode. This is undesirable and this extension will take care of that. It will also help you to easily manage your Hotjar ID's in staging and development environments.
 
 ## Requirements
 
@@ -36,7 +36,7 @@ Vue ^3.0.0
 npm install vue-hotjar
 ```
 
-Start using it your Vue application
+Start using it in your Vue application.
 
 ```js
 import Vue from 'vue'
@@ -51,7 +51,7 @@ Vue.use(Hotjar, {
 
 #### Id:
 
-Your Hotjar Site ID is a required parameter and can be found on your Hotjar account. 
+Your Hotjar Site ID is a required parameter and can be found on your Hotjar account.
 
 ```js 
 id: 'XXXXXXX' 
@@ -59,7 +59,7 @@ id: 'XXXXXXX'
 
 #### snippetVersion:
 
-This optional paramater does not need to be specified as it will default to the latest Hotjar Snippet version. Currently it will default to ```version 6```.
+This optional parameter does not need to be specified as it will default to the latest Hotjar Snippet version. Currently, it will default to ```version 6```.
 
 ```js 
 snippetVersion: 6 
@@ -67,7 +67,7 @@ snippetVersion: 6
 
 #### isProduction:
 
-If you would like to disable or enable tracking pass in either true or false. It is advised to bind your Node ENV. This is an optional parameter and will default to true if not specified
+If you would like to disable or enable tracking pass in either true or false. It is advised to bind your Node ENV. This is an optional parameter and will default to true if not specified.
 
 ```js 
 isProduction: true 
