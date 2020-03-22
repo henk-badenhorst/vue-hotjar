@@ -8,6 +8,9 @@
   <span>
     <img src="https://travis-ci.org/henk-badenhorst/vue-hotjar.svg?branch=master">
   </span>
+  <span>
+    <img src="https://coveralls.io/repos/github/henk-badenhorst/vue-hotjar/badge.svg?branch=master">
+  </span>
   &nbsp;
   <span>
     <img src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg">
@@ -22,13 +25,9 @@
 
 This is a simple Vue plugin that will allow you to easily add Hotjar to any Vue project.
 
-# Why should I use it
+## Why should I use it
 
-If you just add the Hotjar snippet to your site it will start tracking user activity regardless of the enviroment Eg. in development mode. This is undesirable and this extension will take care of that. It will also help you to easilty manage the your hotjar ID's in staging and development enviroments.
-
-## Requirements
-
-Vue ^3.0.0
+If you just add the Hotjar snippet to your site it will start tracking user activity regardless of the environment Eg. in development mode. This is undesirable and this extension will take care of that. It will also help you to easily manage your Hotjar ID's in staging and development environments.
 
 ## Install
 
@@ -36,7 +35,7 @@ Vue ^3.0.0
 npm install vue-hotjar
 ```
 
-Start using it your Vue application
+Start using it in your Vue application.
 
 ```js
 import Vue from 'vue'
@@ -51,7 +50,7 @@ Vue.use(Hotjar, {
 
 #### Id:
 
-Your Hotjar Site ID is a required parameter and can be found on your Hotjar account. 
+Your Hotjar Site ID is a required parameter and can be found on your Hotjar account.
 
 ```js 
 id: 'XXXXXXX' 
@@ -59,7 +58,7 @@ id: 'XXXXXXX'
 
 #### snippetVersion:
 
-This optional paramater does not need to be specified as it will default to the latest Hotjar Snippet version. Currently it will default to ```version 6```.
+This optional parameter does not need to be specified as it will default to the latest Hotjar Snippet version. Currently, it will default to `version 6`.
 
 ```js 
 snippetVersion: 6 
@@ -67,7 +66,7 @@ snippetVersion: 6
 
 #### isProduction:
 
-If you would like to disable or enable tracking pass in either true or false. It is advised to bind your Node ENV. This is an optional parameter and will default to true if not specified
+If you would like to disable or enable tracking pass in either `true` or `false`. It is advised to bind your Node ENV. This is an optional parameter and will default to true if not specified.
 
 ```js 
 isProduction: true 
@@ -85,3 +84,18 @@ Vue.use(Hotjar, {
     isProduction: true 
 })
 ```
+
+### Varify Installation
+
+In order to verify your installation in a production environment or whenever the `isProduction` parameter is set to `true`, you can simply navigate to the below URL. If the installation is successful you should see a notification appear on your website indicating that Hotjar is receiving data and your implementation is successful.
+
+```https://[BASE-URL]/?hjVerifyInstall=[TRACKING-ID]```
+
+Additionally you can verify the install by logging in to insights.hotjar.com and viewing the tracking status.
+
+
+### Supported Vue Versions
+
+* Vue ^3.0.0
+
+* Vue ^4.0.0
