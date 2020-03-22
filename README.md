@@ -8,16 +8,13 @@
   <span>
     <img src="https://travis-ci.org/henk-badenhorst/vue-hotjar.svg?branch=master">
   </span>
+  &nbsp;
   <span>
     <img src="https://coveralls.io/repos/github/henk-badenhorst/vue-hotjar/badge.svg?branch=master">
   </span>
   &nbsp;
   <span>
     <img src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg">
-  </span>
-  &nbsp;
-  <span>
-    <img src="https://img.shields.io/github/license/henk-badenhorst/vue-hotjar">
   </span>
 </p>
 
