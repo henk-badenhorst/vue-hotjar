@@ -1,15 +1,15 @@
-import { Hotjar } from './hotjar.js'
-
-// Default & Latest Hotjar Snippet Version
-const latestSnippetVersion = 6
+import { Hotjar } from './hotjar'
+import { Validate } from './validate'
 
 export default {
   install (Vue, options) {
-    const { id, snippetVersion = latestSnippetVersion, isProduction = true } = options
-    if (isProduction) {
-      return new Hotjar(id, snippetVersion)
-    } else {
-      console.warn('HotJar Disabled')
-    }
+    const { id, snippetVersion = 6, isProduction = true } = options
+    Validate.options(options).then(() => {
+      if (isProduction) {
+        return new Hotjar(id, snippetVersion)
+      } else {
+        console.warn('HotJar tracking disabled')
+      }
+    }).catch(error => console.error(error))
   }
 }

@@ -19,9 +19,9 @@ describe('Hotjar Development Mode', () => {
     expect(window.hj).not.toBeDefined()
   })
 
-  it('Console should output warning', () => {
+  it('Console should output info', () => {
     expect(global.console.warn).toHaveBeenCalledWith(
-      'HotJar Disabled'
+      'HotJar tracking disabled'
     )
   })
 })
