@@ -82,7 +82,7 @@ Vue.use(Hotjar, {
 })
 ```
 
-### Varify Installation
+### Verify Installation
 
 In order to verify your installation in a production environment or whenever the `isProduction` parameter is set to `true`, you can simply navigate to the below URL. If the installation is successful you should see a notification appear on your website indicating that Hotjar is receiving data and your implementation is successful.
 
@@ -96,3 +96,4 @@ Additionally you can verify the install by logging in to insights.hotjar.com and
 * Vue ^3.0.0
 
 * Vue ^4.0.0
+
