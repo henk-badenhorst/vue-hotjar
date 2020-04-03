@@ -14,6 +14,10 @@
   </span>
   &nbsp;
   <span>
+    <img src="https://img.shields.io/npm/dt/vue-hotjar.svg"> 
+  </span>
+  &nbsp; 
+  <span>
     <img src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg">
   </span>
 </p>
