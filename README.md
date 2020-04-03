@@ -55,7 +55,7 @@ id: 'XXXXXXX'
 
 #### isProduction:
 
-If you would like to disable or enable tracking pass in either `true` or `false`. It is advised to bind your Node ENV variable. This is an optional parameter and will default to true if not specified.
+If you would like to disable or enable tracking, pass in either `true` or `false`. It is advised to bind your Node ENV variable. This is an optional parameter and will default to true if not specified.
 
 ```js 
 isProduction: true 
@@ -88,7 +88,7 @@ In order to verify your installation in a production environment or whenever the
 
 ```https://<YOUR-BASE-URL>/?hjVerifyInstall=<YOUR-SITE-ID>```
 
-Additionally you can verify the install by logging in to insights.hotjar.com and viewing the tracking status.
+Additionally you can verify the install by logging in to insights.hotjar.com and view the tracking status.
 
 ### Supported Vue Versions
 
