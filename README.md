@@ -20,11 +20,7 @@
 
 # Vue Hotjar
 
-This is a simple Vue plugin that will allow you to easily add Hotjar to any Vue project.
-
-## Why should I use it
-
-If you just add the Hotjar snippet to your site it will start tracking user activity regardless of the environment Eg. in development mode. This is undesirable and this extension will take care of that. It will also help you to easily manage your Hotjar ID's in staging and development environments.
+This is a simple Vue plugin that will allow you to easily add Hotjar to any Vue project. One of the key benefits of this plugin is that it allows you to activate or deactivate tracking based on the environment. In addition to this vue-hotjar also allows you to specify different Hotjar Site ID's for different environments. 
 
 ## Install
 
@@ -47,10 +43,18 @@ Vue.use(Hotjar, {
 
 #### Id:
 
-Your Hotjar Site ID is a required parameter and can be found on your Hotjar account.
+Your Hotjar Site ID is a required parameter. You can find this ID at insights.hotjar.com under tracking.
 
 ```js 
 id: 'XXXXXXX' 
+```
+
+#### isProduction:
+
+If you would like to disable or enable tracking pass in either `true` or `false`. It is advised to bind your Node ENV variable. This is an optional parameter and will default to true if not specified.
+
+```js 
+isProduction: true 
 ```
 
 #### snippetVersion:
@@ -61,14 +65,6 @@ This optional parameter does not need to be specified as it will default to the 
 snippetVersion: 6 
 ```
 
-#### isProduction:
-
-If you would like to disable or enable tracking pass in either `true` or `false`. It is advised to bind your Node ENV. This is an optional parameter and will default to true if not specified.
-
-```js 
-isProduction: true 
-```
-
 ### Full Example
 
 ```js
@@ -77,8 +73,8 @@ import Hotjar from 'vue-hotjar'
 
 Vue.use(Hotjar, {
     id: 'XXXXXXX',
-    snippetVersion: 6,
-    isProduction: true 
+    isProduction: true,
+    snippetVersion: 6
 })
 ```
 
@@ -86,7 +82,7 @@ Vue.use(Hotjar, {
 
 In order to verify your installation in a production environment or whenever the `isProduction` parameter is set to `true`, you can simply navigate to the below URL. If the installation is successful you should see a notification appear on your website indicating that Hotjar is receiving data and your implementation is successful.
 
-```https://[BASE-URL]/?hjVerifyInstall=[TRACKING-ID]```
+```https://<BASE-URL>/?hjVerifyInstall=<TRACKING-ID>```
 
 Additionally you can verify the install by logging in to insights.hotjar.com and viewing the tracking status.
 
