@@ -12,7 +12,8 @@
   },
   "main": "dist/vue-hotjar.js",
   "files": [
-    "dist"
+    "dist",
+    "index.d.ts"
   ],
   "bugs": "https://github.com/henk-badenhorst/vue-hotjar/issues",
   "homepage": "https://github.com/henk-badenhorst/vue-hotjar.git#readme",
