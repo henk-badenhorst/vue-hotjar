@@ -1,6 +1,7 @@
 const path = require('path')
 const TerserPlugin = require('terser-webpack-plugin')
 const CompressionPlugin = require('compression-webpack-plugin')
+const CopyPlugin = require('copy-webpack-plugin')
 
 module.exports = function (env, argv) {
   const isProduction = argv.mode === 'production'
@@ -30,7 +31,11 @@ module.exports = function (env, argv) {
       ]
     },
     plugins: [
-      ...(isProduction ? [new CompressionPlugin()] : [])
+      ...(isProduction ? [new CompressionPlugin()] : []),
+      new CopyPlugin([
+        // Copy Typings to dist
+        { from: 'src/types', to: 'types' }
+      ])
     ]
   }
 }

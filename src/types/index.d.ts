@@ -1,9 +1,7 @@
-import { PluginObject } from "vue";
+/* eslint-disable no-unused-vars */
+import { PluginObject } from 'vue'
 
-declare const Hotjar: VueHotjarPlugin;
-export default Hotjar;
 export interface VueHotjarPlugin extends PluginObject<VueHotjarUseOptions> {}
-
 export interface VueHotjarUseOptions {
   /**
    * Your Hotjar Site ID is a required parameter. You can find this ID at [insights.hotjar.com](https://insights.hotjar.com) under tracking.
@@ -26,5 +24,9 @@ export interface VueHotjarUseOptions {
    *
    * @Default 6
    */
-  snippetVersion?: number;
+  snippetVersion?: number
 }
+
+declare const Hotjar: VueHotjarPlugin
+
+export default Hotjar
