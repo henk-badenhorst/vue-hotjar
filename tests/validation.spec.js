@@ -23,7 +23,6 @@ describe('Validation integration test', () => {
 })
 
 describe('Validating of input Parameter', () => {
-
   it('Hotjar ID should exist', () => {
     return expect(Validate.options({
       isProduction: false
