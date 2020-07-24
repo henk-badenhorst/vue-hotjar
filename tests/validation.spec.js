@@ -24,41 +24,38 @@ describe('Validation integration test', () => {
 
 describe('Validating of input Parameter', () => {
   it('Hotjar ID should exist', () => {
-    return expect(Validate.options({
-      isProduction: false
-    })).rejects.toEqual(new Error('Hotjar Tracking ID is not defined'))
+    expect(() => {
+      Validate.options({ isProduction: false })
+    }).toThrowError('Hotjar Tracking ID is not defined')
   })
 
-  it('Hotjar ID should be valid', () => {
-    return expect(Validate.options({
-      id: '111111'
-    })).resolves.toStrictEqual([true, true, true])
+  it('Hotjar validation should pass and return true', () => {
+    expect(
+      Validate.options({ id: '111111' })
+    ).toEqual(true)
   })
 
   it('Hotjar ID should not be valid', () => {
-    return expect(Validate.options({
-      id: '111XXX'
-    })).rejects.toEqual(new Error('Invalid Hotjar Tracking ID'))
+    expect(() => {
+      Validate.options({ id: '111XXX' })
+    }).toThrowError('Invalid Hotjar Tracking ID')
   })
 
   it('Hotjar ID should be a string', () => {
-    return expect(Validate.options({
-      id: 111111
-    })).rejects.toEqual(new Error('Hotjar Tracking ID expects a string'))
+    expect(() => {
+      Validate.options({ id: 111111 })
+    }).toThrowError('Hotjar Tracking ID expects a string')
   })
 
   it('isProduction Parameter is a boolean', () => {
-    return expect(Validate.options({
-      id: '111111',
-      isProduction: 'false'
-    })).rejects.toEqual(new Error('isProduction expects a boolean'))
+    expect(() => {
+      Validate.options({ id: '111111', isProduction: 'false' })
+    }).toThrowError('isProduction expects a boolean')
   })
 
   it('snippetVersion Parameter is a boolean', () => {
-    return expect(Validate.options({
-      id: '111111',
-      isProduction: false,
-      snippetVersion: '6'
-    })).rejects.toEqual(new Error('snippetVersion expects a number'))
+    expect(() => {
+      Validate.options({ id: '111111', isProduction: false, snippetVersion: '6' })
+    }).toThrowError('snippetVersion expects a number')
   })
 })
