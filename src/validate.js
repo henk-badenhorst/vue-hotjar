@@ -1,30 +1,41 @@
 export class Validate {
   static options (options) {
     // Validate Tracking Id parameter
-    const id = new Promise((resolve, reject) => {
+    const id = () => {
       // Expression checkes if the Hotjar Traking Id contains only numbers and no white spaces
       const idExpression = new RegExp(/^([0-9])*\d$/g)
       if (!options.id) {
-        reject(Error('Hotjar Tracking ID is not defined'))
+        throw new Error('Hotjar Tracking ID is not defined')
       } else if (idExpression.test(options.id) === false) {
-        reject(Error('Invalid Hotjar Tracking ID'))
+        throw new Error('Invalid Hotjar Tracking ID')
       } else if (typeof options.id !== 'string') {
-        reject(Error('Hotjar Tracking ID expects a string'))
+        throw new Error('Hotjar Tracking ID expects a string')
       } else {
-        resolve(true)
+        return true
       }
-    })
+    }
 
     // Validate isProduction parameter
-    const isProduction = new Promise((resolve, reject) => {
-      typeof options.isProduction !== 'boolean' && options.isProduction ? reject(Error('isProduction expects a boolean')) : resolve(true)
-    })
+    const isProduction = () => {
+      if (typeof options.isProduction !== 'boolean' && options.isProduction) {
+        throw new Error('isProduction expects a boolean')
+      } else {
+        return true
+      }
+    }
 
     // Validate isProduction parameter
-    const snippetVersion = new Promise((resolve, reject) => {
-      typeof options.snippetVersion !== 'number' && options.snippetVersion ? reject(Error('snippetVersion expects a number')) : resolve(true)
-    })
+    const snippetVersion = () => {
+      if (typeof options.snippetVersion !== 'number' && options.snippetVersion) {
+        throw new Error('snippetVersion expects a number')
+      } else {
+        return true
+      }
+    }
 
-    return Promise.all([id, isProduction, snippetVersion])
+    // Return true if all parameter are validated
+    if (id() && isProduction() && snippetVersion()) {
+      return true
+    }
   }
 }
