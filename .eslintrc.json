@@ -3,6 +3,12 @@
         "browser": true,
         "es6": true
     },
+    "ignorePatterns": [
+        "dist/**/*",
+        "coverage/**/*",
+        "node_modules/**/*",
+        "webpack.config.js"
+    ],
     "extends": [
         "standard",
         "plugin:jest/recommended"

@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Hotjar from '../src'
 
 global.console = {
-  warn: jest.fn()
+  log: jest.fn()
 }
 
 beforeEach(() => {
@@ -19,9 +19,16 @@ describe('Hotjar Development Mode', () => {
     expect(window.hj).not.toBeDefined()
   })
 
+  it('Should add $hj as Vue Prototype', () => {
+    expect(Vue.prototype.$hj).toBeDefined()
+  })
+
+  it('Vue Prototype $hj should return false', () => {
+    expect(Vue.prototype.$hj).toEqual(false)
+  })
+
   it('Console should output info', () => {
-    expect(global.console.warn).toHaveBeenCalledWith(
-      'HotJar tracking disabled'
-    )
+    const message = global.console.log.mock.calls[0][0]
+    expect(message).toEqual(expect.stringContaining('HotJar Tracking Disabled'))
   })
 })

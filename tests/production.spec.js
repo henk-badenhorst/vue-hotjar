@@ -6,12 +6,20 @@ beforeEach(() => {
   Vue.use(Hotjar, {
     id: '111111'
   })
-  return new Vue({})
+  return new Vue()
 })
 
 describe('Hotjar Production Mode', () => {
   it('Should add Hotjar to window object', () => {
     expect(window.hj).toBeDefined()
+  })
+
+  it('Should add $hj as Vue Prototype', () => {
+    expect(Vue.prototype.$hj).toBeDefined()
+  })
+
+  it('Vue Prototype $hj should return the window.hj interface', () => {
+    expect(Vue.prototype.$hj).toEqual(window.hj)
   })
 
   it('Hotjar ID should be equal argument ID', () => {
