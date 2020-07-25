@@ -1,7 +1,13 @@
-.DS_Store
+# Directories
+/coverage
 /node_modules
 /dist
 /coverage
+
+# Files
+.DS_Store
+npm-debug.log
+package-lock.json
 
 # Editor directories and files
 .idea
