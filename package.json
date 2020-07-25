@@ -4,7 +4,7 @@
   "description": "Vue Hotjar plugin",
   "scripts": {
     "test": "jest --silent --verbose --coverage",
-    "lint": "eslint ./src/**/* ./tests/**",
+    "lint": "eslint ./",
     "build": "rm -rf dist && webpack --mode production",
     "start": "webpack --mode development --watch",
     "coveralls": "npm test && cat ./coverage/lcov.info | coveralls",

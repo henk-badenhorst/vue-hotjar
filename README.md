@@ -21,7 +21,7 @@
 
 # Vue Hotjar
 
-This is a simple Vue plugin that will allow you to easily add Hotjar to any Vue project. One of the key benefits of this plugin is that it allows you to activate or deactivate tracking based on the environment. In addition to this vue-hotjar also allows you to specify different Hotjar Site ID's for different environments. 
+This is a Vue.js plugin that will allow you to easily add Hotjar to any Vue project. Some key benefits allow you to activate or deactivate tracking based on the environment and in some more advanced use cases you have access to `$hj`. This is a global property that gives you access to the [identify API](https://help.hotjar.com/hc/en-us/articles/360034216634-Hotjar-JavaScript-Functions-Reference) and [other functions](https://help.hotjar.com/hc/en-us/articles/360033640653) to pass data to Hotjar.
 
 ## Install
 
@@ -35,8 +35,8 @@ Start using it in your Vue application.
 import Vue from 'vue'
 import Hotjar from 'vue-hotjar'
 
-Vue.use(Hotjar, {
-    id: 'XXXXXXX' // Hotjar Site ID
+Vue.use (Hotjar, {
+  id: 'XXXXXXX' // Hotjar Site ID
 })
 ```
 
@@ -72,14 +72,14 @@ snippetVersion: 6
 import Vue from 'vue'
 import Hotjar from 'vue-hotjar'
 
-Vue.use(Hotjar, {
-    id: 'XXXXXXX',
-    isProduction: true,
-    snippetVersion: 6
+Vue.use (Hotjar, {
+  id: 'XXXXXXX',
+  isProduction: true,
+  snippetVersion: 6
 })
 ```
 
-### Verify Installation
+## Verify Installation
 
 In order to verify your installation in a production environment or whenever the `isProduction` parameter is set to `true`, you can simply navigate to the below URL. If the installation is successful you should see a notification appear on your website indicating that Hotjar is receiving data and your implementation is successful.
 
@@ -87,8 +87,40 @@ In order to verify your installation in a production environment or whenever the
 
 Additionally you can verify the install by logging in to insights.hotjar.com and view the tracking status.
 
-### Supported Vue Versions
+## HotJar API
+
+instead of accessing HotJar through `window.hj` you can simpaly interact with the API via the a Vue global property `$hj`. 
+
+__Important To Note:__ The global property `$hj` will return `false` if `isProduction` is set to `false`. Thus it is required to wrap your method in a simple if statement as per the examples below.
+
+### Track Changes Manually
+```js
+if (this.$hj) {
+  this.$hj('stateChange', '/your/url/here')
+}
+```
+
+### Virtual Page View
+```js
+if (this.$hj) {
+  this.$hj('vpv', 'funnel-step-one')
+}
+```
+
+
+### Identify API *(Business Plan)*
+```js
+if (this.$hj) {
+  this.$hj('identify', userId, {
+    email: 'hello@coffeeshop.com',
+    purchase_amount: 500,
+    ab_test: 'variant-A',
+  })
+}
+```
+
+## Supported Vue Versions
 
 * Vue ^3.0.0
 
-* Vue ^4.0.0
+* Vue ^2.0.0
