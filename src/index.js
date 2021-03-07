@@ -20,7 +20,14 @@ function init (options) {
 
 export default {
   install (Vue, options) {
-    Vue.prototype.$hj = init(options)
-    Vue.prototype.$hjOptions = options
+    // Determin Vue major version
+    if (Vue.prototype) {
+      // Vue version 2.x.x
+      Vue.prototype.$hj = init(options)
+      Vue.prototype.$hjOptions = options
+    } else {
+      // Vue version 3.x.x
+      init(options)
+    }
   }
 }
