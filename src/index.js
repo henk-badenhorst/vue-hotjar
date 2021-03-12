@@ -26,7 +26,8 @@ export default {
       Vue.prototype.$hj = init(options)
       Vue.prototype.$hjOptions = options
     } else {
-      // Vue version 3.x.x
+      // Falling back to just initialize Hotjar.
+      // This prevents the plugin breaking for vue 3.x.x users.
       init(options)
     }
   }
