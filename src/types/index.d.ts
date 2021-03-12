@@ -1,7 +1,10 @@
 /* eslint-disable no-unused-vars */
-import { PluginObject } from 'vue'
+import { PluginFunction, PluginObject } from 'vue'
 
-export interface VueHotjarPlugin extends PluginObject<VueHotjarUseOptions> {}
+export interface VueHotjarPlugin extends PluginObject<VueHotjarUseOptions> {
+  install: PluginFunction<VueHotjarUseOptions>
+}
+
 export interface VueHotjarUseOptions {
   /**
    * Your Hotjar Site ID is a required parameter. You can find this ID at [insights.hotjar.com](https://insights.hotjar.com) under tracking.
