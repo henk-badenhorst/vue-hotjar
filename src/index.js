@@ -20,14 +20,13 @@ function init (options) {
 
 export default {
   install (Vue, options) {
-    // Determin Vue major version
-    if (Vue.prototype) {
+    // Determine Vue major version
+    if (Vue.version[0] === '2') {
       // Vue version 2.x.x
       Vue.prototype.$hj = init(options)
       Vue.prototype.$hjOptions = options
     } else {
-      // Falling back to just initialize Hotjar.
-      // This prevents the plugin breaking for vue 3.x.x users.
+      // Falling back to just initialize HotJar
       init(options)
     }
   }
