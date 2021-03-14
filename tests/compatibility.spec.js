@@ -7,7 +7,6 @@ const versions = {
   vue2: '2.6.11'
 }
 
-
 describe('VueJs version compatibility (version: 2.x.x)', () => {
   const localVue = createLocalVue()
 
@@ -34,9 +33,7 @@ describe('VueJs version compatibility (version: 2.x.x)', () => {
   it('Should add Hotjar to window object', () => {
     expect(window.hj).toBeDefined()
   })
-
 })
-
 describe('Vue Next version compatibility (version: 3.x.x)', () => {
   const localVue = createLocalVue()
 
@@ -63,5 +60,4 @@ describe('Vue Next version compatibility (version: 3.x.x)', () => {
   it('Should add Hotjar to window object', () => {
     expect(window.hj).toBeDefined()
   })
-
 })
