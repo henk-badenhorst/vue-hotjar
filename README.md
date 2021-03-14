@@ -21,7 +21,7 @@
 
 # Vue Hotjar
 
-This is a Vue.js plugin that will allow you to easily add Hotjar to any Vue project. Some key benefits allow you to activate or deactivate tracking based on the environment and in some more advanced use cases you have access to `$hj`. This is a global property that gives you access to the [identify API](https://help.hotjar.com/hc/en-us/articles/360034216634-Hotjar-JavaScript-Functions-Reference) and [other functions](https://help.hotjar.com/hc/en-us/articles/360033640653) to pass data to Hotjar.
+This is a VueJs plugin that will allow you to easily add Hotjar to any Vue project. Some key benefits allow you to activate or deactivate tracking based on the environment and in some more advanced use cases you have access to `$hj`. This is a global property that gives you access to the [identify API](https://help.hotjar.com/hc/en-us/articles/360034216634-Hotjar-JavaScript-Functions-Reference) and [other functions](https://help.hotjar.com/hc/en-us/articles/360033640653) to pass data to Hotjar.
 
 ## Install
 
@@ -89,9 +89,13 @@ Additionally you can verify the install by logging in to insights.hotjar.com and
 
 ## HotJar API
 
-instead of accessing HotJar through `window.hj` you can simpaly interact with the API via the a Vue global property `$hj`. 
+instead of accessing HotJar through `window.hj` you can simply interact with the API via the a Vue global property `$hj`. 
 
-__Important To Note:__ The global property `$hj` will return `false` if `isProduction` is set to `false`. Thus it is required to wrap your method in a simple if statement as per the examples below.
+__Important To Note:__ 
+
+* The global property `$hj` will return `false` if `isProduction` is set to `false`. Thus it is required to wrap your method in a simple if statement as per the examples below.
+
+* This functionality is only available if your Vue version is 2.x.x. For Vue Next users this is disabled for compatibility.
 
 ### Track Changes Manually
 ```js
@@ -107,7 +111,6 @@ if (this.$hj) {
 }
 ```
 
-
 ### Identify API *(Business Plan)*
 ```js
 if (this.$hj) {
@@ -121,6 +124,7 @@ if (this.$hj) {
 
 ## Supported Vue Versions
 
-* Vue ^3.0.0
+* Vue ^2.0.0 is fully supported.
 
-* Vue ^2.0.0
+* Vue ^3.0.0 is partially supported. TypeScript users will experience issues with typings due to the interface updates in Vue Next.
+
