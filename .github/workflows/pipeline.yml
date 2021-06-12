@@ -1,0 +1,55 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  quality-check:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout
+      - uses: actions/checkout@v2
+
+      # Set Node Version 14
+      - name: Use Node V14.x.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      # Run Prettier to check code formatting 
+      - name: Check Formatting
+        run: npm run format
+
+      # Run linting
+      - name: Lint
+        run: npm run lint
+
+      # Run unit tests
+      - name: Unit Test
+        run: npm run test
+
+      # Build & generate npm package tarball
+      - name: Build Package
+        run: npm run build
+
+      # Publish built artifact (not necessary, to be used in future) 
+      - uses: actions/upload-artifact@v2
+        with:
+          name: vue-hotjar-next
+          path: dist/**/*
+
+      # Release the package to npm registry
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm run release
