@@ -17,7 +17,7 @@ describe('Validation integration test', () => {
     return new Vue()
   })
 
-  it('Check validation error hanler', () => {
+  it('Check validation error handler', () => {
     expect(global.console.error).toHaveBeenCalledWith(new Error('Invalid Hotjar Tracking ID'))
   })
 })
