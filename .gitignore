@@ -4,10 +4,9 @@
 /dist
 /coverage
 
-# Files
+# General files
 .DS_Store
 npm-debug.log
-package-lock.json
 
 # Editor directories and files
 .idea
